@@ -12,6 +12,24 @@ The application is a simple guestbook website where users can post messages. It 
 4. API Gateway forwards the request to Cloud Functions.
 5. The Cloud Functions actions use IBM Cloudant to store and retrieve guestbook entries.
 
+## API
+
+- Create an API
+- Go to Actions.
+- Select the read-guestbook-entries-sequence sequence. Next to the name, click on Web Action, check Enable as Web Action and Save.
+- Do the same for the save-guestbook-entry-sequence sequence.
+- Go to APIs and click Create API (or Create Managed API if you have existing APIs).
+- Set the API name to guestbook and, accordingly, the base path to /guestbook.
+- Click on Create operation and create an operation to retrieve guestbook entries:
+- Set path to /entries
+- Set verb to GET
+- Select the read-guestbook-entries-sequence action
+- Click on Create operation and create an operation to persist a guestbook entry:
+- Set path to /entries
+- Set verb to PUT
+- Select the save-guestbook-entry-sequence action
+- Scroll to the end of the page to Create the API. Make note of the provided route, as you will use it from your web application.
+
 Refer to [this tutorial](https://console.bluemix.net/docs/solution-tutorials/serverless-api-webapp.html) for instructions.
 
 ## License
